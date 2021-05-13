@@ -1,0 +1,142 @@
+.layout-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr 5fr 5fr 1fr;
+    grid-gap: 5em;
+    grid-template-rows: 50em 25em;
+    grid-template-areas:
+        ".  content content content content."
+        "footer footer footer footer footer footer"
+    ;
+}
+
+.content {
+    background-color: white;
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "content-text-left content-text-left vectors";
+
+}
+
+.footer {
+    background-color: #23A6F0;
+    grid-area: footer;
+}
+
+.content-text-left {
+    grid-area: content-text-left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.vectors {
+    grid-area: vectors;
+}
+
+.content-text-left .eye-popping {
+    width: 50%;
+}
+
+.content-text-left .eye-popping-text {
+    color: #252B42;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 4.5em;
+    line-height: 1.25em;
+    padding-bottom: 0.5em;
+}
+
+.content-text-left .description {
+    width: 50%;
+}
+
+.content-text-left .description-text {
+    color: #737373;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.content-text-left .buttons {
+    width: 50%;
+    display: flex;
+}
+
+.content-text-left .button-start {
+    padding: 1em 2em;
+    background: #23A6F0;
+    border-radius: 2em;
+    border: none;
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+    margin: 1em;
+}
+
+.content-text-left .button-learn {
+    padding: 1em 2em;
+    border: 1px solid #23A6F0;
+    box-sizing: border-box;
+    border-radius: 2em;
+    font-style: normal;
+    font-weight: bold;
+    color: #23A6F0;
+    margin: 1em;
+}
+
+.vector-left {
+    position: absolute;
+    width: 22em;
+    height: 25em;
+    left: -8em;
+    top: calc(50% - 40em / 2 - 1em);
+
+    background: #8EC2F2;
+    border-radius: 10em;
+    opacity: 0.25;
+    transform: matrix(-0.71, 0.81, -0.61, -0.71, 0, 0);
+}
+
+.vector-right-light {
+    position: absolute;
+    width: 28em;
+    height: 32em;
+    right: 15em;
+    top: calc(50% - 15em / 2 - 1em);
+
+    background: #23A6F0;
+    border-radius: 15em;
+    mix-blend-mode: normal;
+    opacity: 0.4;
+    transform: matrix(0.98, 0.22, -0.21, 0.98, 0, 0);
+}
+
+.vector-right-dark {
+    position: absolute;
+    width: 30em;
+    height: 35em;
+    right: 15em;
+    top: calc(50% - 15em / 2 - 1em);
+
+    background: #8EC2F2;
+    border-radius: 14em;
+    mix-blend-mode: normal;
+    opacity: 0.35;
+    transform: matrix(0.43, 0.89, -0.93, 0.4, 0, 0);
+}
+
+.dashboard-mockup {
+    width: 16.5em;
+    height: auto;
+}
+
+.vector-image {
+    position: absolute;
+    left: 83em;
+    top: 16em;
+    border-radius: 5em;
+    transform: rotate(13deg);
+}

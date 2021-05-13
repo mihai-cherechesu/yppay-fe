@@ -1,0 +1,62 @@
+<div class="layout-wrapper">
+    <div class="icon">
+        <img src="assets/images/logo_size.jpg" class="logo" alt="logo">
+    </div>
+    <div class="header">
+        <ul class="nav-buttons-left">
+            <li><a routerLink="/landing" routerLinkActive="active">Home</a></li>
+            <li><a routerLink="/landing" routerLinkActive="active">Services</a></li>
+            <li><a routerLink="/landing" routerLinkActive="active">Contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <button class="button-login" (click)="show()">Login</button>
+            <button class="button-become">Become a member</button>
+        </div>
+    </div>
+</div>
+
+<div [style.display]="showModal ? 'block' : 'none'" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Login</h4>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                        <label class="label-username">Username</label>
+                        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                            <div *ngIf="f.username.errors.required">Username is required</div>
+                            <div *ngIf="f.username.errors.minLength">Wrong password or username</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                            <div *ngIf="f.password.errors.minlength">Wrong password or username</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal" (click)="hide()">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
