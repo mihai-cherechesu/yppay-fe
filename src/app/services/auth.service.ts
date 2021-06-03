@@ -46,4 +46,9 @@ export class AuthService {
     this.storage.set('refresh', refresh);
   }
 
+  removeTokenPair(): void {
+    this.storage.remove('access');
+    this.storage.remove('refresh');
+  }
+
 }

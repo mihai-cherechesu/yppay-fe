@@ -5,12 +5,15 @@
     <div class="header">
         <ul class="nav-buttons-left">
             <li><a routerLink="/landing" routerLinkActive="active">Home</a></li>
-            <li><a routerLink="/landing" routerLinkActive="active">Services</a></li>
             <li><a routerLink="/landing" routerLinkActive="active">Contact</a></li>
+            <li *ngIf="loggedIn"><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
         </ul>
-        <div class="nav-buttons">
+        <div *ngIf="!loggedIn" class="nav-buttons">
             <button class="button-login" (click)="show()">Login</button>
             <button class="button-become">Become a member</button>
+        </div>
+        <div *ngIf="loggedIn" class="nav-buttons">
+          <button routerLink="/landing" (click)="logout()" class="button-become">Logout</button>
         </div>
     </div>
 </div>
@@ -22,7 +25,7 @@
                 <h4 class="modal-title" id="myModalLabel">Login</h4>
             </div>
             <div class="modal-body">
-                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
 
                     <div class="form-group">
                         <label class="label-username">Username</label>

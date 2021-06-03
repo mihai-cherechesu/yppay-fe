@@ -10,6 +10,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthInterceptor} from './interceptors/auth.interceptor';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     LandingComponent,
     PageNotFoundComponent,
     NavbarComponent,
+    ProfileComponent,
   ],
     imports: [
         BrowserModule,

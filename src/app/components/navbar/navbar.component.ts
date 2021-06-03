@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -12,9 +13,11 @@ export class NavbarComponent implements OnInit {
   public loginForm?: FormGroup;
   public showModal?: boolean;
   public submitted?: boolean;
+  public loggedIn?: boolean;
 
   constructor(private formBuilder: FormBuilder,
-              private auth: AuthService) { }
+              private auth: AuthService,
+              private router: Router) { }
 
   get f(): { [p: string]: AbstractControl } | undefined {
     return this.loginForm?.controls;
@@ -27,6 +30,7 @@ export class NavbarComponent implements OnInit {
     });
     this.showModal = false;
     this.submitted = false;
+    this.loggedIn  = false;
   }
 
   show(): void {
@@ -37,7 +41,7 @@ export class NavbarComponent implements OnInit {
     this.showModal = false;
   }
 
-  onSubmit(): void {
+  login(): void {
     this.submitted = true;
 
     if (this.loginForm?.invalid) {
@@ -48,9 +52,27 @@ export class NavbarComponent implements OnInit {
       const loginFormValue = this.loginForm?.value;
 
       this.auth.getTokenPair(loginFormValue.username, loginFormValue.password)
-          .subscribe(tokenPair => { this.auth.storeTokenPair(tokenPair.access_token, tokenPair.refresh_token); console.log(tokenPair); });
+        .subscribe(
+          tokenPair => {
+            this.auth.storeTokenPair(tokenPair.access_token, tokenPair.refresh_token);
+            this.loggedIn = true;
+            this.router.navigate(['/profile'])
+              .then(r => console.log(r));
+          },
+          error => {
+            this.loggedIn = false;
+          }
+        );
 
       this.hide();
     }
   }
+
+  logout(): void {
+    this.auth.removeTokenPair();
+    this.loggedIn = false;
+    this.router.navigate(['/landing'])
+      .then(r => console.log(r));
+  }
+
 }

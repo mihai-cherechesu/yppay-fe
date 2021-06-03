@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i');
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . . . . . . . . . . . . . . ."
+    ". Balance Balance Balance Balance . Send Send Send Send . Card Card Card Card Card ."
+    ". Balance Balance Balance Balance . Send Send Send Send . Card Card Card Card Card ."
+    ". Balance Balance Balance Balance . Send Send Send Send . Card Card Card Card Card ."
+    ". Balance Balance Balance Balance . Send Send Send Send . Card Card Card Card Card ."
+    ". . . . . . . . . . . . . . . . ."
+    ". Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics . Again Again Again Again Again ."
+    ". Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics . Again Again Again Again Again ."
+    ". Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics . Activity Activity Activity Activity Activity ."
+    ". Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics . Activity Activity Activity Activity Activity ."
+    ". Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics . Activity Activity Activity Activity Activity ."
+    ". Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics . Activity Activity Activity Activity Activity ."
+    ". Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics Analytics . . . . . . .";
+}
+
+.Balance {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Text Text Text"
+    "Total Total Total"
+    "Total Total Total"
+    "Ron Ron Ron";
+  grid-area: Balance;
+}
+
+.Ron { grid-area: Ron; }
+
+.Total { grid-area: Total; }
+
+.Text { grid-area: Text; }
+
+.Send {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "SendText SendText SendText"
+    "SendMeta SendMeta SendMeta"
+    "SendMeta SendMeta SendMeta"
+    "Button Button Button";
+  grid-area: Send;
+}
+
+.SendText { grid-area: SendText; }
+
+.SendMeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "SendTo SendTo SendTo"
+    "Amount Amount Amount";
+  grid-area: SendMeta;
+}
+
+.SendTo { grid-area: SendTo; }
+
+.Amount { grid-area: Amount; }
+
+.Button { grid-area: Button; }
+
+.Card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "YourCard YourCard YourCard"
+    "CardImage CardImage CardImage"
+    "CardImage CardImage CardImage"
+    "CardImage CardImage CardImage";
+  grid-area: Card;
+}
+
+.YourCard { grid-area: YourCard; }
+
+.CardImage { grid-area: CardImage; }
+
+.Again {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    "Icons Icons Icons";
+  grid-area: Again;
+}
+
+.Icons { grid-area: Icons; }
+
+.Activity {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Activity-1 Activity-1 Activity-1 Activity-1 Activity-1"
+    "Activity-2 Activity-2 Activity-2 Activity-2 Activity-2"
+    "Activity-3 Activity-3 Activity-3 Activity-3 Activity-3"
+    "See-More See-More See-More See-More See-More";
+  grid-area: Activity;
+}
+
+.Activity-1 { grid-area: Activity-1; }
+
+.Activity-2 { grid-area: Activity-2; }
+
+.Activity-3 { grid-area: Activity-3; }
+
+.See-More { grid-area: See-More; }
+
+.Analytics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "PaymentAnalytics PaymentAnalytics PaymentAnalytics"
+    "Graphs Graphs Graphs"
+    "Graphs Graphs Graphs"
+    "Graphs Graphs Graphs"
+    "Graphs Graphs Graphs"
+    "History History History"
+    "History History History";
+  grid-area: Analytics;
+}
+
+.PaymentAnalytics { grid-area: PaymentAnalytics; }
+
+.Graphs { grid-area: Graphs; }
+
+.History {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "InvoiceActivity InvoiceActivity InvoiceActivity"
+    "InvoiceHeader InvoiceHeader InvoiceHeader"
+    "InvoiceEntries InvoiceEntries InvoiceEntries";
+  grid-area: History;
+}
+
+.InvoiceActivity { grid-area: InvoiceActivity; }
+
+.InvoiceHeader { grid-area: InvoiceHeader; }
+
+.InvoiceEntries { grid-area: InvoiceEntries; }
+
+.title {
+  margin-bottom: 30px;
+  color: #162969;
+}
+
+.Balance {
+  border: 1px transparent;
+  background: white;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.Send {
+  border: 1px transparent;
+  background: white;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.Again {
+  border: 1px transparent;
+  background: white;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.Activity {
+  border: 1px transparent;
+  background: white;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.Analytics {
+  border: 1px transparent;
+  background: white;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.card{
+  width: 320px;
+  height: 190px;
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+  perspective:600px;
+}
+
+.card__part{
+  box-shadow: 1px 1px #aaa3a3;
+  top: 0;
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  display: inline-block;
+  width: 320px;
+  height: 190px;
+  background-image: url('https://image.ibb.co/bVnMrc/g3095.png'), linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,117,1) 39%, rgba(9,9,121,1) 41%, rgba(0,212,255,1) 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+
+  -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+.card__front{
+  padding: 18px;
+  -webkit-transform: rotateY(0);
+  -moz-transform: rotateY(0);
+}
+
+.card__back {
+  padding: 18px 0;
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+}
+
+.card__black-line {
+  margin-top: 5px;
+  height: 38px;
+  background-color: #303030;
+}
+
+.card__logo {
+  height: 16px;
+}
+
+.card__front-logo{
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+.card__square {
+  border-radius: 5px;
+  height: 30px;
+}
+
+.card_numer {
+  display: block;
+  width: 100%;
+  word-spacing: 4px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.card__space-75 {
+  width: 75%;
+  float: left;
+}
+
+.card__space-25 {
+  width: 25%;
+  float: left;
+}
+
+.card__label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 1px;
+}
+
+.card__info {
+  margin-bottom: 0;
+  margin-top: 5px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card__back-content {
+  padding: 15px 15px 0;
+}
+.card__secret--last {
+  color: #303030;
+  text-align: right;
+  margin: 0;
+  font-size: 14px;
+}
+
+.card__secret {
+  padding: 5px 12px;
+  background-color: #fff;
+  position:relative;
+}
+
+.card__secret:before{
+  content:'';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  height: calc(100% + 6px);
+  width: calc(100% - 42px);
+  border-radius: 4px;
+  background: repeating-linear-gradient(45deg, #ededed, #ededed 5px, #f9f9f9 5px, #f9f9f9 10px);
+}
+
+.card__back-logo {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.card__back-square {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+.card:hover .card__front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+
+}
+
+.card:hover .card__back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+}
+
+.Activity-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Activity-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Activity-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.InvoiceHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.InvoiceEntries {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Ron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Total {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.TextH {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 2em;
+}
+
+.UserAmount {
+  font-weight: bold;
+  line-height: 2em;
+  background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,191,252,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.PrettyTimestamp {
+  color: #737373;
+}
+
+.SendToIn {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 15px;
+  border: 1px solid #23A6F0;
+  width: 100%;
+}
+
+.AmountIn {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 15px;
+  border: 1px solid #23A6F0;
+  width: 100%;
+}
+
+.SendButton {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #23A6F0;
+  background: #23A6F0;
+  border-radius: 15px;
+  width: 100%;
+  font-weight: bold;
+  color: white;
+}
+
+
+
